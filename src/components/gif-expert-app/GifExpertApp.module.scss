@@ -1,7 +1,21 @@
 @use '../../abstracts/' as *;
 
+.container {
+    background: $white;
+}
+
+.hr {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
 .title {
     text-align: center;
     font-family: $raleway;
     font-weight: 600;
+}
+
+.ul {
+    list-style: none;
+    padding-left: 0;
 }

@@ -8,6 +8,7 @@ import {
   InputLabel,
   FormHelperText,
 } from "@mui/material";
+import styles from './AddCategory.module.scss';
 
 const AddCategory = (props) => {
   const [inputValue, setInputValue] = useState("");
@@ -19,7 +20,7 @@ const AddCategory = (props) => {
     e.preventDefault();
     // validación de la categoría a agregar
     if (inputValue.trim().length > 2) {
-      setCategories((categs) => [...categs, inputValue]);
+      setCategories((categs) => [inputValue, ...categs]);
       setInputValue("");
     }
   };
@@ -27,24 +28,26 @@ const AddCategory = (props) => {
   const handleClick = (e) => handleSubmit(e);
 
   return (
-    <FormGroup onSubmit={handleSubmit}>
-      <FormControl>
-        <InputLabel htmlFor="agregar-categoria">Agregar Categoría</InputLabel>
-        <Input
-          id="agregar-categoria"
-          aria-describedby="nueva-categoria"
-          type="text"
-          value={inputValue}
-          onChange={handleInputChange}
-        />
-        <FormHelperText id="nueva-categoria">
-          Campo para agregar categoría.
-        </FormHelperText>
-      </FormControl>
-      <Button variant="outlined" color="success" onClick={handleClick}>
-        Agregar
-      </Button>
-    </FormGroup>
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <FormGroup>
+        <FormControl>
+          <InputLabel htmlFor="agregar-categoria">Agregar Categoría</InputLabel>
+          <Input
+            id="agregar-categoria"
+            aria-describedby="nueva-categoria"
+            type="text"
+            value={inputValue}
+            onChange={handleInputChange}
+          />
+          <FormHelperText id="nueva-categoria">
+            Campo para agregar categoría.
+          </FormHelperText>
+        </FormControl>
+        <Button variant="outlined" color="success" onClick={handleClick}>
+          Agregar
+        </Button>
+      </FormGroup>
+    </form>
   );
 };
 
