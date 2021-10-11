@@ -1,24 +1,16 @@
-import React, { useState, useEffect } from "react";
-
+import React from "react";
 import GifGridItem from "../gif-grid-item/GifGridItem";
 import styles from "./GifGrid.module.scss";
-import { getGifs } from "../../helpers/getGifs";
+import { useFetchGifs } from "../../hooks/useFetchGifs";
 
 const GifGrid = (props) => {
   const { category } = props;
-
-  const [images, setImages] = useState([]);
-
-  useEffect(() => {
-    // getGifs devuelve una promesa, la cual servirá para settear las images
-    getGifs( category )
-    .then( setImages )
-  }, [ category ]);
-
+  const { data: images, loading } = useFetchGifs(category);
 
   return (
     <li className={styles.li}>
       <h3 className={styles.title}>{category}</h3>
+      {loading && <p>Loading...</p>}
       <ul className={styles.cardsContainer}>
         {images.map((img) => (
           <GifGridItem key={img.id} {...img} />
