@@ -1,0 +1,18 @@
+/* Breakpoints por valores menores */
+
+$min_bp_min: 599px;
+$med_bp_min: 799px;
+$max_bp_min: 1279px;
+
+/* Breakpoint por valores mayores */
+
+$min_bp_max: 600px;
+$med_bp_max: 800px;
+$max_bp_max: 1280px;
+
+/*
+* Primer abreviatura: min, med y max --> minimun, medium and maximum
+* Segunda abreviatura: bp --> BreakPoint
+* Tercera abreviatura: min --> minor, haciendo referencia a valores menores
+* Tercera abreviatura: max --> maximum, haciendo referencia a valores mayores (major)
+*/
