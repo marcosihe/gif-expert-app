@@ -4,7 +4,7 @@ import styles from './GifExpertApp.module.scss'
 const GifExpertApp = () => {
   return (
     <div>
-      <h1 className={styles.title}>GifExpertApp</h1>
+      <h1 className={styles.title}>Gif Expert App</h1>
       <hr />
     </div>
   );
