@@ -5,13 +5,13 @@ import GifGrid from "../gif-grid/GifGrid";
 import styles from "./GifExpertApp.module.scss";
 
 const GifExpertApp = () => {
-  const [categories, setCategories] = useState(["One Punch", "Samurai X"]);
+  const [categories, setCategories] = useState([
+    "Los simpsons",
+  ]);
 
   return (
     <section className={styles.container}>
-      <h1 className={styles.title}>Gif Expert App</h1>
       <AddCategory setCategories={setCategories} />
-      <hr className={styles.hr}/>
       <ul className={styles.ul}>
         {categories.map((category) => (
           <GifGrid key={category} category={category} />

@@ -1,16 +1,27 @@
 .imgCard {
-    max-height: 170px;
+  max-height: 220px;
 }
 
 .card {
-    max-width: 340px;
-    border: 1px solid grey;
-    border-radius: 3px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    overflow: hidden;
+  max-width: 220px;
+  border: 1px solid grey;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardContent {
+  width: 100%;
+  text-align: center;
+}
+
+.img {
+  max-width: 220px;
 }
 
 .li {
-    list-style: none;
+  list-style: none;
 }

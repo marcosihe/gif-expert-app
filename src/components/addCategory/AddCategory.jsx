@@ -31,19 +31,20 @@ const AddCategory = (props) => {
     <form onSubmit={handleSubmit} className={styles.form}>
       <FormGroup>
         <FormControl>
-          <InputLabel htmlFor="agregar-categoria">Agregar Categoría</InputLabel>
+          <InputLabel htmlFor="agregar-categoria" sx={{color: '#e3f2fd'}}>Agregar Categoría</InputLabel>
           <Input
             id="agregar-categoria"
             aria-describedby="nueva-categoria"
             type="text"
             value={inputValue}
             onChange={handleInputChange}
+            sx={{color: '#e3f2fd'}}
           />
           <FormHelperText id="nueva-categoria">
             Campo para agregar categoría.
           </FormHelperText>
         </FormControl>
-        <Button variant="outlined" color="success" onClick={handleClick}>
+        <Button variant="contained" sx={{color: '#e3f2fd'}} color="success" onClick={handleClick}>
           Agregar
         </Button>
       </FormGroup>

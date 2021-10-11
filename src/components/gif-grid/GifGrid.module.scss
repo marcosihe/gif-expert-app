@@ -1,18 +1,30 @@
-@use '../../abstracts/' as *;
+@use "../../abstracts/" as *;
 
 .cardsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
-    margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  margin: 2rem;
 }
 
 .title {
-    text-align: center;
-    font-family: $roboto;
+  text-align: center;
+  font-family: $roboto;
+  color: $white;
+}
+
+.ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
 }
 
 .li {
-    list-style: none;
+  list-style: none;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

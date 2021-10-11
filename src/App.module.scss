@@ -1,0 +1,29 @@
+@use "./abstracts/" as *;
+
+body {
+  background: linear-gradient(
+    to left,
+    rgb(9, 168, 128) 0%,
+    rgb(238, 237, 217) 100%
+  );
+}
+
+.header {
+  text-align: center;
+  font-family: $raleway;
+  font-size: 2rem;
+  color: $success;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  font-family: $raleway;
+  font-weight: 600;
+}
