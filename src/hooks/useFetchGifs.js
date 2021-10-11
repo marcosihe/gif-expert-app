@@ -9,10 +9,12 @@ export const useFetchGifs = (category) => {
 
   useEffect(() => {
     getGifs(category).then((imgs) => {
-      setState({
-        data: imgs,
-        loading: false,
-      });
+      setTimeout(() => {
+        setState({
+          data: imgs,
+          loading: false,
+        });
+      }, 900);
     });
   }, [category]);
 
