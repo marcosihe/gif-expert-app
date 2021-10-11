@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import GifGridItem from "../gif-grid-item/GifGridItem";
 import styles from "./GifGrid.module.scss";
+import { getGifs } from "../../helpers/getGifs";
 
 const GifGrid = (props) => {
   const { category } = props;
@@ -9,29 +10,11 @@ const GifGrid = (props) => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    getGifs();
-  }, []);
+    // getGifs devuelve una promesa, la cual servirá para settear las images
+    getGifs( category )
+    .then( setImages )
+  }, [ category ]);
 
-  const getGifs = async () => {
-    const GIF_URL = "api.giphy.com/v1/gifs/search";
-    const apiKey = "Ph4pFgWwElK9iwz5toxhaFYs7MPsBZj9";
-    const limit = 10;
-    const URL = `https://${GIF_URL}?q=${encodeURI(
-      category
-    )}&limit=${limit}&api_key=${apiKey}`;
-
-    const resp = await fetch(URL);
-    const { data } = await resp.json();
-
-    const gifs = data.map((img) => {
-      return {
-        id: img.id,
-        title: img.title,
-        url: img.images?.downsized_medium?.url,
-      };
-    });
-    setImages(gifs);
-  };
 
   return (
     <li className={styles.li}>
